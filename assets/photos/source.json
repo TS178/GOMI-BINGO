@@ -5,51 +5,92 @@
   "images": [
     {
       "id": "foam",
-      "file": "foam.jpg",
-      "sha256": "25fcd9a7ec3aee85078dad07d51deefa0d64180b072a7657d3169caf5c04f399",
-      "bytes": 197203
+      "file": "foam.webp",
+      "sha256": "210b0ab7499546f76de8a9bd39f5eff3fb913c8293124404105eef319fc6cc71",
+      "bytes": 130148,
+      "original": {
+        "file": "foam.jpg",
+        "sha256": "25fcd9a7ec3aee85078dad07d51deefa0d64180b072a7657d3169caf5c04f399",
+        "bytes": 197203
+      }
     },
     {
       "id": "plastic",
-      "file": "plastic.jpg",
-      "sha256": "0b3d6ee342303a6a3eb934fad9f72fd7d8cb21f0e7dd356c1cc6a48db68b63aa",
-      "bytes": 229528
+      "file": "plastic.webp",
+      "sha256": "8bf85174e2aafc56867a44db7429155107ddbd3dfe035e1c458aac34251dc773",
+      "bytes": 154440,
+      "original": {
+        "file": "plastic.jpg",
+        "sha256": "0b3d6ee342303a6a3eb934fad9f72fd7d8cb21f0e7dd356c1cc6a48db68b63aa",
+        "bytes": 229528
+      }
     },
     {
       "id": "buoy",
-      "file": "buoy.jpg",
-      "sha256": "c38569cddc3dcf87f88af2625837ae13caf50624224897e76a56333c6c4c009b",
-      "bytes": 181769
+      "file": "buoy.webp",
+      "sha256": "5cabee69baf3a843875dba6ec0aa84cf6aae4e1a34c81666df443840d323bd01",
+      "bytes": 118888,
+      "original": {
+        "file": "buoy.jpg",
+        "sha256": "c38569cddc3dcf87f88af2625837ae13caf50624224897e76a56333c6c4c009b",
+        "bytes": 181769
+      }
     },
     {
       "id": "rope",
-      "file": "rope.jpg",
-      "sha256": "bb7724fa9230c0e45fd21eb1138fd9534a8e342fa4e7bbe8761f23da6faf0b15",
-      "bytes": 255698
+      "file": "rope.webp",
+      "sha256": "c417de05ec77108528098c3fe365d7e29bc899a411238a201d65a957ba72bee1",
+      "bytes": 183474,
+      "original": {
+        "file": "rope.jpg",
+        "sha256": "bb7724fa9230c0e45fd21eb1138fd9534a8e342fa4e7bbe8761f23da6faf0b15",
+        "bytes": 255698
+      }
     },
     {
       "id": "wood",
-      "file": "wood.jpg",
-      "sha256": "fed9d95c1a963ae8af865e6a27852d954d8154248c1869b778abdedb89632892",
-      "bytes": 630186
+      "file": "wood.webp",
+      "sha256": "aeebbc17507de31e90d36f341fce6a770ed07e1aaa1a7ca0dcd933a4589bfc94",
+      "bytes": 180600,
+      "original": {
+        "file": "wood.jpg",
+        "sha256": "fed9d95c1a963ae8af865e6a27852d954d8154248c1869b778abdedb89632892",
+        "bytes": 630186
+      }
     },
     {
       "id": "pet",
-      "file": "pet.jpg",
-      "sha256": "4e9ed8feb26ec852f1ff481b1d34e4f62d4de010b5351ed079834be0c909b1d6",
-      "bytes": 638351
+      "file": "pet.webp",
+      "sha256": "008759f81e977e731e6830aaddd41f7baf4be14dc74d233a8c00d9fb93676e99",
+      "bytes": 174760,
+      "original": {
+        "file": "pet.jpg",
+        "sha256": "4e9ed8feb26ec852f1ff481b1d34e4f62d4de010b5351ed079834be0c909b1d6",
+        "bytes": 638351
+      }
     },
     {
       "id": "metal",
-      "file": "metal.jpg",
-      "sha256": "4776ff01935a93351a4715f9fea92f076e8ae257c6170f466186ae4d75a20e1d",
-      "bytes": 696266
+      "file": "metal.webp",
+      "sha256": "05b1bbcd3537cff4de5989d433827e45234a44c48f4eef7a26370bd97ad8adac",
+      "bytes": 204370,
+      "original": {
+        "file": "metal.jpg",
+        "sha256": "4776ff01935a93351a4715f9fea92f076e8ae257c6170f466186ae4d75a20e1d",
+        "bytes": 696266
+      }
     },
     {
       "id": "bottle",
-      "file": "bottle.jpg",
-      "sha256": "5db6c9be30ae4a7efb1f8b149a6f323325f493c6838eab6eaf71c87d0f9755a8",
-      "bytes": 666209
+      "file": "bottle.webp",
+      "sha256": "16d724382b72096655053a24f9e50615d70711a4c39f49acdf58830d7acd0048",
+      "bytes": 187942,
+      "original": {
+        "file": "bottle.jpg",
+        "sha256": "5db6c9be30ae4a7efb1f8b149a6f323325f493c6838eab6eaf71c87d0f9755a8",
+        "bytes": 666209
+      }
     }
-  ]
+  ],
+  "optimization": "2026-10-16: original photographs resized to a maximum side of 960px and converted to WebP (quality 84); no generated replacements."
 }

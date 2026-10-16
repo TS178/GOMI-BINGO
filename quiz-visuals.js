@@ -11,11 +11,11 @@ const QUIZ_VISUALS={
 };
 function quizPhoto(q){
  const [genre]=QUIZ_VISUALS[Number(q.no)];
- return {genre,src:`assets/quiz/questions/q${String(Number(q.no)).padStart(2,'0')}.png`,alt:`${genre}の問題イラスト`};
+ return {genre,src:`assets/quiz/questions/q${String(Number(q.no)).padStart(2,'0')}.webp`,alt:`${genre}の問題イラスト`};
 }
 function quizQuestionCard(q,env=false){
  const photo=quizPhoto(q),progress=env?`${state.envQuizIndex+1} / ${QUIZZES.length}`:(reviewQuizPos===null?'3択':'ふくしゅう');
- return `<div class="card quiz-shell visual-quiz ${q.question.length>48?'long-question':''}"><figure class="quiz-photo-hero"><img src="${photo.src}" alt="${photo.alt}"><figcaption class="quiz-topline"><strong>${photo.genre}</strong><span>${progress}</span></figcaption></figure><h2>${rubyText(q.question)}</h2><div id="${env?'envChoices':'choices'}">${q.choices.map((c,i)=>`<button class="choice" onclick="${env?'answerEnvQuiz':'answerQuiz'}(${i})"><span class="choice-letter">${String.fromCharCode(65+i)}</span><span>${rubyText(c)}</span></button>`).join('')}</div></div>`;
+ return `<div class="card quiz-shell visual-quiz ${q.question.length>48?'long-question':''}"><figure class="quiz-photo-hero"><img src="${photo.src}" decoding="async" alt="${photo.alt}"><figcaption class="quiz-topline"><strong>${photo.genre}</strong><span>${progress}</span></figcaption></figure><h2>${rubyText(q.question)}</h2><div id="${env?'envChoices':'choices'}">${q.choices.map((c,i)=>`<button class="choice" onclick="${env?'answerEnvQuiz':'answerQuiz'}(${i})"><span class="choice-letter">${String.fromCharCode(65+i)}</span><span>${rubyText(c)}</span></button>`).join('')}</div></div>`;
 }
 function quizAnswerIndex(q){return (q.answer||'').trim().toUpperCase().replace('Ａ','A').replace('Ｂ','B').replace('Ｃ','C').charCodeAt(0)-65;}
 function quizFeedbackCard(q,ok,env=false){
@@ -26,5 +26,5 @@ function quizFeedbackCard(q,ok,env=false){
 }
 function answerIllustration(q){
  const no=String(Number(q.no)).padStart(2,'0');
- return `<img src="assets/quiz/answers/q${no}.png" width="1536" height="1024" alt="" decoding="async">`;
+ return `<img src="assets/quiz/answers/q${no}.webp" width="960" height="640" alt="" decoding="async">`;
 }

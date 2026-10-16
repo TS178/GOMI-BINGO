@@ -72,7 +72,7 @@
   window.startSeaOpening = async function () {
     if (current || starting) return;
     starting=true;
-    try { await document.fonts.load('900 80px "Noto Sans JP"'); } catch {}
+    // Logo sprites can animate immediately; text fonts load independently.
     await gameLogoReady();
     starting=false;
     if(current) return;
