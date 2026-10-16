@@ -113,7 +113,7 @@ async function runBoardCelebration(pos,lines,rewards,newReach=[]){
  if(!alive())return;
  if(newReach.length){
   const count=reachLines().length;
-  const message=count===1?'リーチ！':count===2?'ダブルリーチ！！':`${count}リーチ！！！`;
+  const message=count===1?'リーチ！':count===2?'ダブルリーチ！':`${count}リーチ！`;
   const status=document.querySelector('.board-footnote');status.setAttribute('role','status');status.textContent=`${message} 光っているマスでビンゴ！`;
   const callout=document.createElement('div');callout.className=`reach-callout${count>1?' reach-callout-long':''}`;
   callout.setAttribute('aria-hidden','true');callout.innerHTML='<span></span>';callout.firstChild.textContent=message;

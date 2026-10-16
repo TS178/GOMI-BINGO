@@ -88,6 +88,8 @@
     document.body.style.overflow = 'hidden';
     document.body.appendChild(el);
     window.GameImages?.start();
+    // The small rounded announcement font is ready before the first reach.
+    document.fonts.load('900 48px "Reach Rounded"','ダブルリーチ！').catch(()=>{});
     // A fixed mask at the front rim hides the letters while they are inside.
     // It belongs to the scene, not to the moving glyphs.
     const flightLayer = document.createElement('div');

@@ -26,6 +26,9 @@ assets/
 fonts/
   NotoSansJP-App.woff2
   NotoSansJP-Variable.woff2
+  ReachRounded-Black.woff2
+  ReachRounded-OFL.txt
+  ReachRounded-source.json
   OFL.txt
 .gitignore
 README.md
@@ -47,4 +50,4 @@ HTMLの未使用の埋め込み画像を除去し、約6.46MBから約62KBに軽
 
 名前と進行状況は各利用者のブラウザーへ保存され、配布ファイルには書き込まれません。異なる端末・URLでは保存内容が共有されません。
 
-フォントはNoto Sans JPです。配布時には`fonts/OFL.txt`も含めてください。
+通常の文字はNoto Sans JP、リーチ演出の文字だけはRounded M+ 1c Blackの丸い太字です。リーチ用フォントは必要文字だけの約2.5KBで、オープニング中に読み込みます。配布時には`fonts/OFL.txt`と`fonts/ReachRounded-OFL.txt`も含めてください。
