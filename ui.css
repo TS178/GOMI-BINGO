@@ -191,7 +191,7 @@ h1,h2,p{margin:0}h2{font-size:clamp(20px,3vw,28px);line-height:1.6;font-weight:9
 
 /* Readable red announcement above the dimmed board and its lit reach tiles. */
 .reach-callout{position:fixed;inset:0;z-index:951;display:grid;place-items:center;pointer-events:none;text-align:center}
-.reach-callout span{display:block;color:#ff55ad;font-family:var(--app-font);font-weight:900;font-size:clamp(40px,14vw,112px);line-height:1.5;white-space:nowrap;letter-spacing:.01em;-webkit-text-stroke:clamp(3px,.5vw,7px) #fff;paint-order:stroke fill;text-shadow:0 2px 0 #df398e,0 4px 0 #c62478,0 6px 0 #9f236a,0 9px 12px #3b174e80;animation:reach-callout-pop .32s ease-out both}
+.reach-callout span{display:block;color:#ff55ad;font-family:var(--app-font);font-weight:900;font-size:clamp(40px,14vw,112px);line-height:1.5;white-space:nowrap;letter-spacing:.01em;-webkit-text-stroke:clamp(3px,.5vw,7px) #fff;paint-order:stroke fill;text-shadow:none;animation:reach-callout-pop .32s ease-out both}
 .reach-callout-long span{font-size:clamp(25px,8.5vw,88px)}
 @keyframes reach-callout-pop{0%{opacity:0;transform:scale(.72)}65%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.reach-callout span{animation:none}}
