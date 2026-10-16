@@ -50,7 +50,8 @@ window.GameImages=(()=>{
   },
   forItem(item){
    warm(`assets/photos/${item.id}.webp`,2);
-   relatedQuiz(item).forEach(q=>warm(quiz(q.no,'questions'),1));
+   const q=bingoQuizForItem(item);
+   warm(quiz(q.no,'questions'),2);warm(quiz(q.no,'answers'),1);
   },
   forQuestion(q,next){
    warm(quiz(q.no,'questions'),3);warm(quiz(q.no,'answers'),2);

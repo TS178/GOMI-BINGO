@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="opening.css?v=14">
 <script src="tile-icons.js?v=17" defer></script>
 <script src="logo-assets.js?v=17"></script>
-<script src="image-cache.js?v=18"></script>
+<script src="image-cache.js?v=23"></script>
 <script src="game-effects.js?v=22"></script>
 <script src="quiz-visuals.js?v=18"></script>
 <script src="player-profile.js?v=9"></script>
@@ -37,6 +37,11 @@ function save(){localStorage.setItem(KEY,JSON.stringify(state))}
 function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function init(){
  migratePlayerProfile();
+ // Preserve the last question from older saves before clearing an interrupted quiz.
+ if(state?.quiz){
+  const item=ITEMS.find(item=>item.id===state.quiz.item);
+  if(item)bingoQuizForItem(item);
+ }
  // A refresh during an unanswered item quiz must not grant the tile.
  if(state && Number.isInteger(state.pendingQuizPos)){
   state.opened[state.pendingQuizPos]=false;
@@ -133,7 +138,7 @@ function startGame(){
  if(state){renderBoard();return;}
  document.getElementById("mainNav").classList.remove("hidden");
  const ids=shuffle(ITEMS.map(x=>x.id));
- state={layout:ids,opened:Array(9).fill(false),firstBingo:false,complete:false,quiz:null,playerName:getPlayerName(),prizeGiven:false};
+ state={layout:ids,opened:Array(9).fill(false),firstBingo:false,complete:false,quiz:null,bingoQuizByItem:{},playerName:getPlayerName(),prizeGiven:false};
  state.opened[4]=true;
  save();
  renderBoard();
@@ -668,8 +673,20 @@ function relatedQuiz(item){
  return QUIZZES.filter(q=>numbers.includes(Number(q.no)));
 }
 
+function bingoQuizForItem(item){
+ if(!state.bingoQuizByItem || typeof state.bingoQuizByItem!=='object' || Array.isArray(state.bingoQuizByItem))state.bingoQuizByItem={};
+ const pool=relatedQuiz(item),candidates=pool.length?pool:QUIZZES;
+ const saved=candidates.find(q=>String(q.no)===String(state.bingoQuizByItem[item.id]));
+ if(saved)return saved;
+ const previous=state.quiz?.item===item.id?candidates.find(q=>String(q.no)===String(state.quiz.qno)):null;
+ const q=previous||shuffle(candidates)[0];
+ state.bingoQuizByItem[item.id]=q.no;
+ save();
+ return q;
+}
+
 function showQuiz(item){
- const pool=relatedQuiz(item),q=shuffle(pool.length?pool:QUIZZES)[0];
+ const q=bingoQuizForItem(item);
  if(reviewQuizPos===null){state.quiz={qno:q.no,item:item.id};save();}
  window.currentQuiz=q;
  setModalContent(quizQuestionCard(q));
