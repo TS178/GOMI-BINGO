@@ -1,0 +1,55 @@
+{
+  "source": "Shika_SeaTrash_Bingo_FULL_GAME3/index.html",
+  "source_field": "REAL_SEA_PHOTOS",
+  "extracted": "2026-10-16",
+  "images": [
+    {
+      "id": "foam",
+      "file": "foam.jpg",
+      "sha256": "25fcd9a7ec3aee85078dad07d51deefa0d64180b072a7657d3169caf5c04f399",
+      "bytes": 197203
+    },
+    {
+      "id": "plastic",
+      "file": "plastic.jpg",
+      "sha256": "0b3d6ee342303a6a3eb934fad9f72fd7d8cb21f0e7dd356c1cc6a48db68b63aa",
+      "bytes": 229528
+    },
+    {
+      "id": "buoy",
+      "file": "buoy.jpg",
+      "sha256": "c38569cddc3dcf87f88af2625837ae13caf50624224897e76a56333c6c4c009b",
+      "bytes": 181769
+    },
+    {
+      "id": "rope",
+      "file": "rope.jpg",
+      "sha256": "bb7724fa9230c0e45fd21eb1138fd9534a8e342fa4e7bbe8761f23da6faf0b15",
+      "bytes": 255698
+    },
+    {
+      "id": "wood",
+      "file": "wood.jpg",
+      "sha256": "fed9d95c1a963ae8af865e6a27852d954d8154248c1869b778abdedb89632892",
+      "bytes": 630186
+    },
+    {
+      "id": "pet",
+      "file": "pet.jpg",
+      "sha256": "4e9ed8feb26ec852f1ff481b1d34e4f62d4de010b5351ed079834be0c909b1d6",
+      "bytes": 638351
+    },
+    {
+      "id": "metal",
+      "file": "metal.jpg",
+      "sha256": "4776ff01935a93351a4715f9fea92f076e8ae257c6170f466186ae4d75a20e1d",
+      "bytes": 696266
+    },
+    {
+      "id": "bottle",
+      "file": "bottle.jpg",
+      "sha256": "5db6c9be30ae4a7efb1f8b149a6f323325f493c6838eab6eaf71c87d0f9755a8",
+      "bytes": 666209
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+# Local visual verification output
+/ui-review/
+/opening-review/
+
+# Installed dependencies and browser test output
+node_modules/
+/playwright-report/
+/test-results/
+
+# OS/editor temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
