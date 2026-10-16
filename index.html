@@ -10,11 +10,12 @@
 <link rel="stylesheet" href="opening.css?v=14">
 <script src="tile-icons.js?v=17" defer></script>
 <script src="logo-assets.js?v=17"></script>
+<script src="image-cache.js?v=18"></script>
 <script src="game-effects.js?v=11"></script>
-<script src="quiz-visuals.js?v=17"></script>
+<script src="quiz-visuals.js?v=18"></script>
 <script src="player-profile.js?v=9"></script>
-<script src="opening.js?v=17" defer></script>
-<link rel="stylesheet" href="ui.css?v=17">
+<script src="opening.js?v=18" defer></script>
+<link rel="stylesheet" href="ui.css?v=18">
 </head>
 <body>
 <div class="app">
@@ -637,6 +638,7 @@ function openItem(pos){
  reviewQuizPos=null;
  const reviewing=!!state.opened[pos];
  const item=boardItemAt(pos);
+ window.GameImages?.forItem(item);
  const photo=`assets/photos/${item.id}.webp`;
  showModal(`<article class="item-detail-card"><h2 class="item-detail-title">${rubyText(item.name)}</h2><div class="item-detail-layout"><figure class="item-detail-hero">${photo?`<img src="${photo}" decoding="async" alt="${item.name}の写真">`:item.art}</figure><div class="item-copy-stack"><section class="item-copy description"><h3 class="section-ribbon">どんなものかな？</h3><p>${rubyText(item.desc)}</p></section><section class="item-copy caution"><h3 class="section-ribbon">きをつけること</h3><p>${rubyText(item.tip)}</p></section></div></div><footer class="item-footer"><button class="primary claim-item-button" onclick="${reviewing?`startReviewQuiz(${pos})`:`claimItem(${pos})`}">${reviewing?'クイズでふくしゅう':'ひろってクイズに<ruby>挑戦<rt>ちょうせん</rt></ruby>！'}</button></footer></article>`, reviewing?'ごみずかん・ふくしゅう':'ごみずかん','handleModalClose()');
 }

@@ -87,6 +87,7 @@
     app.inert = true;
     document.body.style.overflow = 'hidden';
     document.body.appendChild(el);
+    window.GameImages?.start();
     // A fixed mask at the front rim hides the letters while they are inside.
     // It belongs to the scene, not to the moving glyphs.
     const flightLayer = document.createElement('div');

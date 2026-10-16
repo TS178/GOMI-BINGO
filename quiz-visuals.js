@@ -14,11 +14,15 @@ function quizPhoto(q){
  return {genre,src:`assets/quiz/questions/q${String(Number(q.no)).padStart(2,'0')}.webp`,alt:`${genre}の問題イラスト`};
 }
 function quizQuestionCard(q,env=false){
+ const next=env?QUIZZES[state.envQuizOrder?.[state.envQuizIndex+1]]:null;
+ window.GameImages?.forQuestion(q,next);
  const photo=quizPhoto(q),progress=env?`${state.envQuizIndex+1} / ${QUIZZES.length}`:(reviewQuizPos===null?'3択':'ふくしゅう');
  return `<div class="card quiz-shell visual-quiz ${q.question.length>48?'long-question':''}"><figure class="quiz-photo-hero"><img src="${photo.src}" decoding="async" alt="${photo.alt}"><figcaption class="quiz-topline"><strong>${photo.genre}</strong><span>${progress}</span></figcaption></figure><h2>${rubyText(q.question)}</h2><div id="${env?'envChoices':'choices'}">${q.choices.map((c,i)=>`<button class="choice" onclick="${env?'answerEnvQuiz':'answerQuiz'}(${i})"><span class="choice-letter">${String.fromCharCode(65+i)}</span><span>${rubyText(c)}</span></button>`).join('')}</div></div>`;
 }
 function quizAnswerIndex(q){return (q.answer||'').trim().toUpperCase().replace('Ａ','A').replace('Ｂ','B').replace('Ｃ','C').charCodeAt(0)-65;}
 function quizFeedbackCard(q,ok,env=false){
+ const next=env?QUIZZES[state.envQuizOrder?.[state.envQuizIndex+1]]:null;
+ window.GameImages?.forAnswer(q,next);
  const answer=q.choices[quizAnswerIndex(q)];
  const action=env?'nextEnvQuiz()':reviewQuizPos===null?'afterQuiz()':'finishReviewQuiz()';
  const button=env?(state.envQuizIndex+1<QUIZZES.length?'次のクイズ':'もう一度クイズに挑戦'):(reviewQuizPos===null?'ビンゴにもどる':'ごみずかんにもどる');
